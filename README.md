@@ -9,6 +9,8 @@ The main route for the API is: **https://raspjannis.spdns.de/api**
 
 All arguments need to be passed in the request Header.
 
+Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other errors return `401`
+
 ## Authorization Routes
 
 * **/login**:
@@ -43,6 +45,50 @@ All arguments need to be passed in the request Header.
 
 ## Userdata
 
+* **/getUserData**:
+  * *Arguments:* UUID
+
+  * *Description:* get basic userData about the currently logged in user
+
+  * *Returns:* {"data": {"email": `email`, "name": `username`, "id": `user id`}}
+
+* **/changePassword**:
+  * *Arguments:* UUID, oldPassword, newPassword
+
+  * *Description:* change the password of the current user
+
+  * *Returns:* {"data": `"True" || "password incorrect" || "passwords are the same"`}
+
+* **/deleteUser**:
+  * *Arguments:* UUID, password
+
+  * *Description:* delete the current user and all their data
+
+  * *Returns:* {"data": `"Successfully deleted user" || "Invalid password or email"`}
+
+* **/getApiKey**:
+  * *Arguments:* UUID
+
+  * *Description:* get the Api-Key of the current user
+
+  * *Returns:* {"data": `Api-Key`}
+
+* **/generateApiKey**:
+  * *Arguments:* UUID
+
+  * *Description:* generate a new Api-Key for the current user
+
+  * *Returns:* {"data": `Api-Key`}
+
+
+* **/isAdmin**:
+  * *Arguments:* UUID
+
+  * *Description:* check the admin status of the current user
+
+  * *Returns:* {"data": `"True" || "False"`}
+
+## File System
 * **/**:
   * *Arguments:*
 
@@ -50,12 +96,6 @@ All arguments need to be passed in the request Header.
 
   * *Returns:* 
 
-* **/**:
-  * *Arguments:*
-
-  * *Description:* 
-
-  * *Returns:* 
 
 * **/**:
   * *Arguments:*
@@ -63,21 +103,6 @@ All arguments need to be passed in the request Header.
   * *Description:* 
 
   * *Returns:* 
-
-* **/**:
-  * *Arguments:*
-
-  * *Description:* 
-
-  * *Returns:* 
-
-* **/**:
-  * *Arguments:*
-
-  * *Description:* 
-
-  * *Returns:* 
-
 
 
 
