@@ -89,6 +89,50 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
   * *Returns:* {"data": `"True" || "False"`}
 
 ## File System
+* **/files/files/`path`**:
+  * *Arguments:* UUID
+
+  * *Description:* 
+
+  * *Returns:* {"data": {"back": `back path`, "path" : `current path`, "files" : `{name, encrypted, path, fileSize, isFolder, thumbnail}`}}
+
+* **/files/upload/`path`**:
+  * *Arguments:* UUID, one of those: (file, link, folder)
+
+  * *Description:* Upload a file, file by link or a add a folder to a path
+
+  * *Returns:* {"data": `"True" || Errors`}
+
+* **/files/all/`path`**:
+  * *Arguments:* UUID
+
+  * *Description:* list all image/video files
+
+  * *Returns:* {"data": `{name, RealName, type}`)}
+
+* **/files/delete/`path`**:
+  * *Arguments:* UUID
+
+  * *Description:* Delete a file/folder
+
+  * *Returns:* {"data": `"True" || Error`}
+
+* **/files/thumbnail/`path`**:
+  * *Arguments:* UUID
+
+  * *Description:* creates a thumbnail for an image file
+
+  * *Returns:* `{"data": "Can't create Thumbnail for folder"} || image file`
+
+* **/files/corrupt**:
+  * *Arguments:* filename, size
+
+  * *Description:* creates a corrupted file
+
+  * *Returns:* file
+
+## Other Routes
+
 * **/**:
   * *Arguments:*
 
@@ -96,6 +140,19 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
 
   * *Returns:* 
 
+* **/**:
+  * *Arguments:*
+
+  * *Description:* 
+
+  * *Returns:* 
+
+* **/**:
+  * *Arguments:*
+
+  * *Description:* 
+
+  * *Returns:* 
 
 * **/**:
   * *Arguments:*
