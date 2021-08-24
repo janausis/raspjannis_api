@@ -94,7 +94,7 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
 
   * *Description:* 
 
-  * *Returns:* {"data": {"back": `back path`, "path" : `current path`, "files" : `{name, encrypted, path, fileSize, isFolder, thumbnail}`}}
+  * *Returns:* {"data": {"back": `back path`, "path" : `current path`, "files" : [`{name, encrypted, path, fileSize, isFolder, thumbnail}`]}}
 
 * **/files/upload/`path`**:
   * *Arguments:* UUID, one of those: (file, link, folder)
@@ -108,7 +108,7 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
 
   * *Description:* list all image/video files
 
-  * *Returns:* {"data": `{name, RealName, type}`)}
+  * *Returns:* {"data": [`{name, RealName, type}`]}
 
 * **/files/delete/`path`**:
   * *Arguments:* UUID
@@ -133,36 +133,30 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
 
 ## Other Routes
 
-* **/**:
-  * *Arguments:*
+* **/benchmark/`mode (1, 2, 3): (default: 1)`**:
+  * *Arguments:* allRuns (optional, list all runs), all (optional, list all modes)
 
-  * *Description:* 
+  * *Description:* returns the benchmark results
 
-  * *Returns:* 
+  * *Returns:* {"data": [`{mode. processor, time} || {"all": [{mode. processor, time}], "sort": [{mode. processor, time}]}`]}
 
-* **/**:
-  * *Arguments:*
+* **/mqtt/`days (default: 7)`**:
+  * *Arguments:* None
 
-  * *Description:* 
+  * *Description:* returns the mqtt log of the last `n` days
 
-  * *Returns:* 
+  * *Returns:* {"data": [`{event, time}`]}
 
-* **/**:
-  * *Arguments:*
+* **/codec/encode**:
+  * *Arguments:* text, seed (optional)
 
-  * *Description:* 
+  * *Description:* encodes a string
 
-  * *Returns:* 
+  * *Returns:* {"data": {"text": `text`, "seed": `used seed`}}
 
-* **/**:
-  * *Arguments:*
+* **/codec/decode**:
+  * *Arguments:* text, seed
 
-  * *Description:* 
+  * *Description:* decodes a string with a given seed
 
-  * *Returns:* 
-
-
-
-
-
-
+  * *Returns:* {"data": {"text": `text`, "seed": `given seed`}}
