@@ -117,6 +117,14 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
 
   * *Returns:* {"data": `"True" || Error`}
 
+* **/files/search/`path`**:
+  * *Arguments:* UUID, subFolders (search in subfolders `"True" || "False"`), search (search String)
+
+  * *Description:* search for a file
+
+  * *Returns:* {"data": [`{name, encrypted, path, fileSize, isFolder, thumbnail}`]}
+
+
 * **/files/thumbnail/`path`**:
   * *Arguments:* UUID
 
