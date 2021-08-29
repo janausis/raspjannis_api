@@ -108,7 +108,14 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
 
   * *Description:* list all image/video files
 
-  * *Returns:* {"data": [`{name, RealName, type}`]}
+  * *Returns:* {"data": [`{name, RealName, path, type}`]}
+
+* **/files/search/all/`path`**:
+  * *Arguments:* UUID, subFolders (search in subfolders `"True" || "False"`), search (search String)
+
+  * *Description:* list all image/video files from a search result
+
+  * *Returns:* {"data": [`{name, RealName, path, type}`]}
 
 * **/files/delete/`path`**:
   * *Arguments:* UUID
