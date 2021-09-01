@@ -90,7 +90,7 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
 
 ## File System
 * **/files/files/`path`**:
-  * *Arguments:* UUID
+  * *Arguments:* UUID, justFolder (optional) `"True" || "False"`
 
   * *Description:*  List all files in a folder of the user
 
