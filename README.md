@@ -97,14 +97,14 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
   * *Returns:* {"data": {"back": `back path`, "path" : `current path`, "files" : [`{name, encrypted, path, fileSize, isFolder, thumbnail}`]}}
 
 * **/files/move/`path`**:
-  * *Arguments:* UUID, destination
+  * *Arguments:* UUID, destination, fileList [item1, item2, item3, ...]
 
   * *Description:* Move a folder from `path` to `destination`
 
   * *Returns:* {"data": `"True" || Errors`}
 
 * **/files/copy/`path`**:
-  * *Arguments:* UUID, destination
+  * *Arguments:* UUID, destination, , fileList [item1, item2, item3, ...]
 
   * *Description:* Copy a folder from `path` to `destination`
 
