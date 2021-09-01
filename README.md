@@ -114,7 +114,7 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
   * *Arguments:* UUID, name, encrypted
 
   * *Description:* Rename a file by its serverside name
-  * 
+  
   * *Returns:* {"data": `"True" || Errors`}
 
 * **/files/all/`path`**:
