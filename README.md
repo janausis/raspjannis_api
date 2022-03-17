@@ -89,56 +89,42 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
   * *Returns:* {"data": `"True" || "False"`}
 
 ## File System
-* **/files/files/`path`**:
+* **/files/`path`**:
   * *Arguments:* UUID, justFolder (optional) `"True" || "False"`
 
   * *Description:*  List all files in a folder of the user
 
   * *Returns:* {"data": {"back": `back path`, "path" : `current path`, "files" : [`{name, encrypted, path, fileSize, isFolder, thumbnail}`]}}
 
-* **/files/copy/`path`**:
+* **/f/copy/`path`**:
   * *Arguments:* UUID, destination, move (optional) `"True" || "False"` , fileList [item1, item2, item3, ...]
 
   * *Description:* Copy or Move a file/folder from `path` to `destination`
 
   * *Returns:* {"data": `"True" || Errors`}
 
-* **/files/upload/`path`**:
+* **/f/upload/`path`**:
   * *Arguments:* UUID, one of those: (file, link, folder)
 
   * *Description:* Upload a file, file by link or a add a folder to a path
 
   * *Returns:* {"data": `"True" || Errors`}
 
-* **/files/rename/`path`**:
+* **/f/rename/`path`**:
   * *Arguments:* UUID, name, encrypted
 
   * *Description:* Rename a file by its serverside name
   
   * *Returns:* {"data": `"True" || Errors`}
 
-* **/files/all/`path`**:
-  * *Arguments:* UUID
-
-  * *Description:* list all image/video files
-
-  * *Returns:* {"data": [`{name, RealName, path, type}`]}
-
-* **/files/search/all/`path`**:
-  * *Arguments:* UUID, subFolders (search in subfolders `"True" || "False"`), search (search String)
-
-  * *Description:* list all image/video files from a search result
-
-  * *Returns:* {"data": [`{name, RealName, path, type}`]}
-
-* **/files/delete/`path`**:
+* **/f/delete/`path`**:
   * *Arguments:* UUID
 
   * *Description:* Delete a file/folder
 
   * *Returns:* {"data": `"True" || Error`}
 
-* **/files/search/`path`**:
+* **/f/search/`path`**:
   * *Arguments:* UUID, subFolders (search in subfolders `"True" || "False"`), search (search String)
 
   * *Description:* search for a file
@@ -146,14 +132,14 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
   * *Returns:* {"data": [`{name, encrypted, path, fileSize, isFolder, thumbnail}`]}
 
 
-* **/files/thumbnail/`path`**:
+* **/f/thumbnail/`path`**:
   * *Arguments:* UUID
 
   * *Description:* creates a thumbnail for an image file
 
   * *Returns:* `{"data": "Can't create Thumbnail for folder"} || image file`
 
-* **/files/corrupt**:
+* **/f/corrupt**:
   * *Arguments:* filename, size
 
   * *Description:* creates a corrupted file
