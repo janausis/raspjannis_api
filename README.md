@@ -88,7 +88,7 @@ Invalid Api-Key returns {"data": "Invalid API-Key"} and error `403` all other er
 
   * *Returns:* {"data": `"True" || "False"`}
 
-## File System
+## File System (DONT USE, WILL BE CHANGED SOON)
 * **/files/`path`**:
   * *Arguments:* UUID, justFolder (optional) `"True" || "False"`
 
